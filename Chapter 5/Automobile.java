@@ -1,6 +1,6 @@
 // Filename Automobile.java
 // Written by <Jorge Villalobos>
-// Written on <11/18/2023
+
 
 public class Automobile {
     private int ID;
@@ -8,11 +8,11 @@ public class Automobile {
     private String Model;
     private String Color;
     private int Year;
-    private String VinNumber;
+    private int VinNumber;
     private int MilesPerGallon;
     private int Speed;
 
-    public Automobile(int ID, String Make, String Model, String Color, int Year, String VinNumber, int MilesPerGallon) {
+    public Automobile(int ID, String Make, String Model, String Color, int Year, int VinNumber, int MilesPerGallon) {
         setID(ID);
         setMake(Make);
         setModel(Model);
@@ -33,31 +33,81 @@ public class Automobile {
             this.ID = 0;
         }
     }
-    public void setYear(int Year) {
-        if (Year >= 2000 & Year <= 2017) {
-            this.Year = Year;
+      public String getMake() {
+        return Make;
+    }
+    public void setMake(String setMake) {
+        Make = setMake;
+    }
+    public String getModel() {
+        return Model;
+    }
+    public void setModel(String setModel) {
+        Model = setModel;
+    }
+    public String getColor() {
+        return Color;
+    }
+    public void setColor(String setColor) {
+        Color = setColor;
+    }
+    public int getYear() {
+        return Year;
+    }
+    public void setYear(int setYear) {
+        if (setYear >=2000 && setYear<= 2017) {
+            Year = setYear;
         } else {
-            this.Year = 0;
+            Year = 0;
         }
     }
-    public void setMilesPerGallon(int MilesPerGallon) {
-        if (MilesPerGallon >= 10 & MilesPerGallon <= 60) {
-            this.MilesPerGallon = MilesPerGallon;
+    public int getVinNumber() {
+        return VinNumber;
+    }
+    public void setVinNumber(int VinNumber){
+        VinNumber = getVinNumber();
+    }
+    public int MilesPerGallon() {
+        return MilesPerGallon;
+    }
+    public void setMilesPerGallon(int setMilesPerGallon) {
+        if (setMilesPerGallon >= 10 && setMilesPerGallon <= 60) {
+            MilesPerGallon = setMilesPerGallon;
         } else {
-            this.MilesPerGallon = 0;
+            MilesPerGallon = 0;
         }
     }
-    public void Accelerate() {
-        Speed += 5;
+    public int getSpeed() {
+        return Speed;
     }
-    public void Accelerate(int increase) {
-        Speed = increase;
+    public void setSpeed(int setSpeed) {
+        Speed = setSpeed;
     }
-    public void Brake() {
-        Speed -= 5;
-        if (Speed < 0) {
-        }else{
-            this.Speed = 0;
+
+    public void displayAutomobile() {
+        System.out.println("ID Number: " + ID + "Make: " + Make + "Model: " + Model + "Color: " + Color + "Year: " + Year + "VIN: " + VinNumber + "MPG: " + MilesPerGallon + "Current Speed: " + Speed);
+    }
+
+    public void accelerate(int x) {
+        x += 5;
+        System.out.println(Make + " " + Model + " speed is now " + x + "miles per gallon");
+    }
+    public void accelerate(double x) {
+        x += 5;
+        System.out.println(Make + " " + Model + " speed is now " + x + "miles per gallon");
+    }
+    public void brake(int x) {
+        x -= 5;
+        if (x < 0) {
+            Speed = 0;
         }
+        System.out.println(Make + " " + Model + " speed is now " + x + "miles per gallon");
+    }
+    public void brake(double x) {
+        x -= 5;
+        if (x < 0) {
+            Speed = 0;
+        }
+        System.out.println(Make + " " + Model + " speed is now " + x + "miles per gallon");
     }
 }

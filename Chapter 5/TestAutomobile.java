@@ -1,18 +1,22 @@
+import java.util.Scanner;
+
 public class TestAutomobile {
     public static void main(String[] args) {
-         Automobile Car1 = new Automobile(1125, "KIA", "Optima", "Red", 2012, "2295260806", 30);
-         Automobile Car2 = new Automobile(5678, "Honda", "Accord", "Blue", 2018, "11251994", 25);
-         System.out.println("Car 1 Speed: " + Car1.getSpeed()); 
-            Car1.Accelerate();
-        System.out.println("Car 1 Speed after Accelerate(): " + Car1.getSpeed());
-            Car1.Accelerate(5);
-        System.out.println("Car 1 Speed after Accelerate(5): " + Car1.getSpeed()); 
-    
-        System.out.println("Car 2 Speed: " + Car2.getSpeed()); 
-            Car2.Brake();
-        System.out.println("Car 2 Speed after Brake(): " + Car2.getSpeed()); 
-            Car2.Accelerate(10);
-        System.out.println("Car 2 Speed after Accelerate(10): " + Car2.getSpeed()); 
-        }
-    }
+    Scanner input = new Scanner(System.in);
 
+        // Creating Automobile Objects
+        Automobile carOne = new Automobile(4886, "Kia", "Optima", "Silver", 2012, 52608060, 30);
+        Automobile carTwo = new Automobile(4560, "Nissan", "Sentra", "Red", 2018, 23134589, 45);
+
+        // Testing Methods
+        carOne.displayAutomobile();
+        carTwo.displayAutomobile();
+        
+        // accelerate and brake
+        System.out.println("");
+        carOne.accelerate(21);
+        carOne.accelerate(21.5);    
+        carOne.brake(21);
+        carOne.brake(21.5);
+    }
+}
