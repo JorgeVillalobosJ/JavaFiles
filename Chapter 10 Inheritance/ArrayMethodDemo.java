@@ -3,12 +3,14 @@ public class ArrayMethodDemo {
         int[] array1 = {2, 5, 8, 10, 15, 20, 25, 30, 35, 40};
         int[] array2 = {3, 9, 12, 15, 18};
 
+        // five methods for array1
         displayIntegers(array1);
         displayIntegersReverse(array1);
         displaySum(array1);
         displayValuesLessThan(array1, 25);
-        displayValuesGreaterThanAverage(array1);
+        displayValuesHigherThanAverage(array1);
 
+        // method to display common values between array1 and array2
         displayCommonValues(array1, array2);
     }
 
@@ -22,8 +24,8 @@ public class ArrayMethodDemo {
 
     // Method to display all integers in reverse order
     public static void displayIntegersReverse(int[] arr) {
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i] + " ");
+        for (int x = arr.length - 1; x >= 0; x--) {
+            System.out.print(arr[x] + " ");
         }
         System.out.println();
     }
@@ -37,7 +39,7 @@ public class ArrayMethodDemo {
         System.out.println("Sum of integers: " + sum);
     }
 
-    // Method to display values less than a limiting argument
+    // Method to display values less than argument
     public static void displayValuesLessThan(int[] arr, int limit) {
         System.out.print("Values less than " + limit + ": ");
         for (int num : arr) {
@@ -48,8 +50,8 @@ public class ArrayMethodDemo {
         System.out.println();
     }
 
-    // Method to display values higher than the calculated average value
-    public static void displayValuesGreaterThanAverage(int[] arr) {
+    // Method to display values higher than the calculated average
+    public static void displayValuesHigherThanAverage(int[] arr) {
         int sum = 0;
         for (int num : arr) {
             sum += num;
@@ -68,6 +70,8 @@ public class ArrayMethodDemo {
     // Method to display common values in two arrays
     public static void displayCommonValues(int[] arr1, int[] arr2) {
         System.out.print("Common values: ");
+        
+
         for (int num1 : arr1) {
             for (int num2 : arr2) {
                 if (num1 == num2) {
@@ -75,6 +79,5 @@ public class ArrayMethodDemo {
                 }
             }
         }
-        System.out.println();
     }
 }
